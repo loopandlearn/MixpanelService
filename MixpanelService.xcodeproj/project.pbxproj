@@ -1,0 +1,69 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXGroup section */
+		84F28B0E2A25CB0F0080127C = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		84F28B0F2A25CB0F0080127C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 84F28B122A25CB0F0080127C /* Build configuration list for PBXProject "MixpanelService" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F28B0E2A25CB0F0080127C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		84F28B132A25CB0F0080127C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		84F28B142A25CB0F0080127C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F28B122A25CB0F0080127C /* Build configuration list for PBXProject "MixpanelService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F28B132A25CB0F0080127C /* Debug */,
+				84F28B142A25CB0F0080127C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84F28B0F2A25CB0F0080127C /* Project object */;
+}

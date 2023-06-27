@@ -87,6 +87,10 @@ extension MixpanelService: AnalyticsService {
     public func recordIdentify(_ property: String, value: String) {
         client?.people.set(property: property, to: value)
     }
+    
+    public func recordIdentify(_ property: String, array: [String]) {
+        client?.people.set(property: property, to: array)
+    }
 }
 
 extension KeychainManager {

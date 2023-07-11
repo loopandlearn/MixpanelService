@@ -64,24 +64,7 @@ public final class MixpanelService: Service {
 
 extension MixpanelService: AnalyticsService {
     public func recordAnalyticsEvent(_ name: String, withProperties properties: [AnyHashable: Any]?, outOfSession: Bool) {
-        guard let properties else {
-            return
-        }
-        
-        var mappedProperties: [String: MixpanelType] = [:]
-        for (key, value) in properties {
-            guard let key = key as? String else {
-                return
-            }
-            
-            guard let value = value as? MixpanelType else {
-                return
-            }
-            
-            mappedProperties[key] = value
-        }
-    
-        client?.track(event: name, properties: mappedProperties)
+        client?.track(event: name, properties: mappedProperties(from: properties))
     }
 
     public func recordIdentify(_ property: String, value: String) {
@@ -106,3 +89,18 @@ extension KeychainManager {
 }
 
 fileprivate let MixpanelTokenService = "MixpanelToken"
+
+private extension MixpanelService {
+    func mappedProperties(from properties: [AnyHashable: Any]?) -> [String: MixpanelType] {
+        guard let properties else { return [:] }
+        var mappedProperties: [String: MixpanelType] = [:]
+        
+        for (key, value) in properties {
+            if let key = key as? String, let value = value as? MixpanelType {
+                mappedProperties[key] = value
+            }
+        }
+        
+        return mappedProperties
+    }
+}

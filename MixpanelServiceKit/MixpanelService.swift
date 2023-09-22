@@ -10,11 +10,13 @@ import LoopKit
 
 public final class MixpanelService: Service {
 
-    public static let serviceIdentifier = "MixpanelService"
+    public static let pluginIdentifier = "MixpanelService"
 
     public static let localizedTitle = LocalizedString("Mixpanel", comment: "The title of the Mixpanel service")
 
     public weak var serviceDelegate: ServiceDelegate?
+
+    public weak var stateDelegate: StatefulPluggableDelegate?
 
     public var token: String?
 
@@ -43,12 +45,12 @@ public final class MixpanelService: Service {
     public func completeUpdate() {
         try! KeychainManager().setMixpanelToken(token)
         createClient()
-        serviceDelegate?.serviceDidUpdateState(self)
+        stateDelegate?.pluginDidUpdateState(self)
     }
 
     public func completeDelete() {
         try! KeychainManager().setMixpanelToken()
-        serviceDelegate?.serviceWantsDeletion(self)
+        stateDelegate?.pluginWantsDeletion(self)
     }
 
     private func createClient() {
